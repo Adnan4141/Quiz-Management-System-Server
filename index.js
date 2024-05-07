@@ -2,7 +2,7 @@
 const express = require('express')
 // const app = require("./app");
 const app = express()
-const connectDB = require("./config/db");
+// const connectDB = require("./config/db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
