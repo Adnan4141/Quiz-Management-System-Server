@@ -50,7 +50,7 @@ router.get("/userUid/:userUid", async (req, res) => {
      const userUid=(req.params.userUid)
     const quizzes = await Quiz.find({CreateBy: userUid}).populate("questions");
     // .populate("user","name username -_id")
-    console.log(quizzes)
+    console.log("quizzes",quizzes)
     res.json(quizzes);
   } catch (err) {
     console.log(err)

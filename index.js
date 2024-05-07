@@ -13,7 +13,7 @@ app.get('/products' , (req , res)=>{
   res.send('hello from Products page')
 })
 
-const dbURL = `mongodb+srv://Adnan:LPL1MheB0B4bsCvg@cluster0.mpobb6h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const dbURL = `mongodb+srv://Adnan:LPL1MheB0B4bsCvg@cluster0.mpobb6h.mongodb.net/Quiz-Management?retryWrites=true&w=majority&appName=Cluster0`;
 connectDB(dbURL)
 .then(() => {
   console.log(`Connected to MongoDB at ${dbURL}`);
