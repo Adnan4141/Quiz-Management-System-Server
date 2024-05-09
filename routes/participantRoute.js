@@ -22,7 +22,27 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get a specific participant
+// Get a specific user  by Id
+router.get('/:id',async (req, res) => {
+  const {id} = req.params
+  console.log(id)
+  console.log("Get a specific user  by Id")
+  try {
+    const participant = await Participant.findOne({"userUid": id}).populate('quizzes');
+    if (!participant){
+      console.log("participant not found")
+      return res.status(404).json({ message: 'Participant not found' });
+    } 
+    console.log("participant found")
+    res.json(participant);
+  } catch (err) {
+    res.status(501).json({ message: err.message ,id});
+  }
+}
+);
+
+
+// Get a specific participant by quizId and userUid
   router.get('/:userUid/quizId/:quizId', async(req, res) => {
   const { userUid, quizId } = req.params;
 
@@ -56,13 +76,14 @@ router.post('/', async (req, res) => {
 
 
 
+
+
 // Get all participants
 router.get('/', getAllParticipants);
 
 
 
-// Get a specific participant
-router.get('/:id',getSpecificParticipants);
+
 
 // Add a quiz to a participant (assuming a relationship exists)
 

@@ -7,10 +7,7 @@ require("dotenv").config();
 const port = process.env.PORT || 3000;
 
 app.get('/' , (req , res)=>{
-  res.send('hello from simple server')
-})
-app.get('/products' , (req , res)=>{
-  res.send('hello from Products page')
+  res.send('<h2>Hello from Home Page</h2>');
 })
 
 const dbURL = `mongodb+srv://Adnan:LPL1MheB0B4bsCvg@cluster0.mpobb6h.mongodb.net/Quiz-Management?retryWrites=true&w=majority&appName=Cluster0`;

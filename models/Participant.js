@@ -4,7 +4,7 @@ const participantSchema = new mongoose.Schema({
   name: String,
   email: String,
   password:String,
-  photoUrl:String, 
+  photoURL:String, 
   userUid:String,
   quizzes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Quiz' }], // Quizzes participated in
   score:Number,

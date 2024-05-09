@@ -17,7 +17,7 @@ app.use('/questions', questionRoutes);
 app.use('/participants', participantRoutes);
 
 app.get('/' , (req , res)=>{
-   res.send('hello from simple server')
+   res.send('<h2>Hello from Home Page</h2>')
 })
 
 module.exports =app;
